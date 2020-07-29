@@ -1,0 +1,9 @@
+<h1>List of all Tags</h1>
+<% @sorted_tags = @tags.sort_by { |tag| tag.name }%>
+<ul id="tags">
+  <% @sorted_tags.each do |tag| %>
+    <li>
+      <%= link_to tag.name, tag_path(tag) %>
+    </li>
+  <% end %>
+</ul>
